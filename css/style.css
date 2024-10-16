@@ -1,0 +1,153 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+body{
+    overflow-x: hidden;
+    height: 100%;
+
+}
+.draggable {
+    padding: 10px;
+    background-color: #d9edf7;
+    border: 1px solid #bce8f1;
+    margin-bottom: 10px;
+    cursor: move;
+    width: 100px;
+    user-select: none; /* Prevent text selection while dragging */
+  }
+
+  /* Styling for the grid layout */
+  .col {
+   
+    min-height: 100px;
+    padding: 10px;
+    position: relative;
+  }
+
+  /* Hover effect when dragging over a dropzone */
+  .drop-active {
+    background-color: #f0f8ff !important;
+  }
+
+  /* When an element is being dragged */
+  .dragging {
+    opacity: 0.5;
+  }
+/* Delete button style */
+.toolbar-delete-btn {
+    display: none; /* Hidden initially */
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  /* Highlight selected element */
+  
+
+  /* Image preview style */
+  .img-preview {
+    margin-top: 10px; /* Spacing */
+  }
+
+  /* Delete button */
+  .delete-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  /* Free positioning of dropped items */
+  .dropped-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .super_container{
+    width: 75%;
+    min-height: 500px;
+    background-color: #aaa;
+    height: auto;
+    transition: 1s ease-in-out;
+  }
+  .row , section , .container, img 
+  {
+    width: 100% ;
+    position: relative;
+    overflow-y: hidden;
+    height: auto;
+  }
+
+  .col-md-6 , .col-12
+  {
+    overflow: hidden;
+  }
+ 
+  .flex-toolbar {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .flex-container {
+    display: flex;
+    gap: 10px;
+    border: 2px dashed #aaa;
+    padding: 20px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  
+  .flex-item {
+    padding: 10px;
+    background-color: #efefef;
+    border: 1px solid #ccc;
+  }
+  .main-panel{
+    height: 100vh;
+    width: 25%;
+    background-color: #463a3c;
+    transition: 1s ease-in-out;
+    overflow-x:hidden ;
+    overflow-y: scroll;
+  }
+  .hover_overlay{
+   
+   border: 2px dashed black;
+  
+  }
+  .main-panel i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    font-size: 24px;
+    color: black;
+    background-color: white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  .temp-spacer{
+    width: 25%;
+    transition: 1s ease-in-out;
+  }
+  label{
+    color: white;
+  }
