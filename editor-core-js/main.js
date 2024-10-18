@@ -10,9 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     autoScroll: true,
     onstart(event) {
       event.target.classList.add("dragging");
+      event.target.style.transition = 'none';
     },
     onend(event) {
       event.target.classList.remove("dragging");
+      event.target.style.transition = '0.4s ease-in-out';
     },
     onmove(event) {
       const target = event.target;
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Dropzones: Enable columns to accept dropped items
   interact(
-    ".super_container, ._section, ._container, _12_4devider1,._12_2devider1, ._12_2devider2, ._12_3devider1, ._12_4devider, ._12_1devider,_12_1devider1, ._row , .flex_row_container"
+    ".super_container, ._section, ._container, ._12_4devider1, ._12_2devider1, ._12_2devider2, ._12_3devider1, ._12_4devider, ._12_1devider, ._12_1devider1, ._row , .flex_row_container"
   ).dropzone({
     accept: ".draggable", // Accept only elements with 'draggable' class
     overlap: 0.5, // Item must be at least 50% over the dropzone
@@ -380,6 +382,13 @@ function get_all_user_customization_for_element(element) {
   newColorPicker.addEventListener("input", function () {
     const selectedColor = this.value;
     currentlyEditableElement.style.backgroundColor = selectedColor;
+    let delete_style_btn = document.getElementById('delete-style');
+    delete_style_btn.classList.remove('deleteStyle-btn');
+    delete_style_btn.classList.add('deleteStyle-btn-active');
+    delete_style_btn.addEventListener('click' , (e)=>{
+      currentlyEditableElement.style['backgroundColor'] = '';
+      delete_style_btn.classList.add('deleteStyle-btn');
+    })
   });
 
   // Alignment functionality
