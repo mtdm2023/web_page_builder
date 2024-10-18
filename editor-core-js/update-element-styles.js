@@ -2,8 +2,15 @@
 sub_main_panel_menus();
 global_events_listeners_UI();
 function updateElementStyle(element, property, value) {
+  let delete_style_btn = document.getElementById('delete-style');
+      delete_style_btn.classList.remove('deleteStyle-btn');
+      delete_style_btn.classList.add('deleteStyle-btn-active');
   if (property && value !== "") {
     element.style[property] = value;
+    delete_style_btn.addEventListener('click' , (e)=>{
+      element.style[property] = '';
+      delete_style_btn.classList.add('deleteStyle-btn');
+    })
   }
 }
 
@@ -117,6 +124,15 @@ document.addEventListener("DOMContentLoaded", () => {
           case "left":
             updateElementStyle(selectedElement, "left", e.target.value);
             break;
+          case "order":
+            updateElementStyle(selectedElement, "order", e.target.value);
+            break;
+          case "shrink":
+            updateElementStyle(selectedElement, "flexShrink", e.target.value);
+            break;
+          case "grow":
+            updateElementStyle(selectedElement, "flexGrow", e.target.value);
+            break;
           default:
             break;
         }
@@ -200,6 +216,26 @@ function sub_main_panel_menus() {
 
         decoration_arrow.classList.remove("fa-caret-down");
         decoration_arrow.classList.add("fa-caret-right");
+      }
+      event.stopPropagation();
+    });
+    let flex_option_menu = document.querySelector(".flex_options");
+    let flex_panel = document.querySelector(".flex_panel");
+    let flex_arrow = document.querySelector(".fas_flex");
+    let flex_current_editable_menu = flex_panel;
+    flex_current_editable_menu.addEventListener("click", (event) => {
+      if (flex_option_menu.style.height == "0px") {
+        flex_option_menu.style.height = " 610px";
+        flex_option_menu.style.padding = "8px";
+        flex_arrow.classList.add("fa-caret-down");
+        flex_arrow.classList.remove("fa-caret-right");
+      } else {
+        console.log("collaps");
+        flex_option_menu.style.height = "0px";
+        flex_option_menu.style.padding = "0px";
+
+        flex_arrow.classList.remove("fa-caret-down");
+        flex_arrow.classList.add("fa-caret-right");
       }
       event.stopPropagation();
     });

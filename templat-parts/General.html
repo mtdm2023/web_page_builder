@@ -1,6 +1,6 @@
 
      
- <div class="General_panel position-relative text-white"><span class="ms-4 position-relative "><i class="fas_general fas fa-caret-right me-2 bg-transparent position-absolute text-white"></i></span>General</div>
+ <div class="d-flex align-items-center General_panel position-relative text-white "><span class="ms-2 "><i class="fas_general fas fa-caret-right me-2 bg-transparent  text-white"></i></span><span>General</span></div>
  <div class="general_options ">
     <div class="row">
         <div class="col-md-6 col-12">
@@ -60,7 +60,16 @@
     <div class="row mt-3">
         <div class="col-md-12 col-12">
             <div class="d-flex flex-column justify-content-start">
-           
+                <div class="toolbar">
+                    <label for="colorPicker">Choose Color:</label>
+                    <input type="color" id="colorPicker" value="#000000" />
+    
+                    <div class="alignment-controls">
+                        <button id="alignLeft">Left</button>
+                        <button id="alignCenter">Center</button>
+                        <button id="alignRight">Right</button>
+                    </div>
+                </div>
                     <label>Border:</label>
                     <input type="text" id="border" placeholder="e.g., 1px solid #000">    
                     <label class="mt-3">Padding:</label>
@@ -71,6 +80,7 @@
                     <input type="color" id="textColor">
                     <label class="mt-3">Margin:</label>
                     <input type="text" id="margin" placeholder="e.g., 10px 15px">
+
     
             </div>
         </div>
