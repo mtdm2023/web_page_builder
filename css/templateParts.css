@@ -21,3 +21,18 @@
     overflow: hidden;
     transition: 0.5s ease-in-out;
 }
+
+.containerr{
+    width: 200px;
+    height: 100px;
+    background-color: brown;
+}
+.right-panel
+{
+    
+    transition: width 1s ease-in-out;
+}
+.right-panel:first-child:hover
+{
+    background-color: blue !important;
+}
